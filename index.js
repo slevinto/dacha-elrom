@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 app.get('/property', (req, res) => {
     res.render('property');
 });
-app.get('/getCalendar', (req, res) => {
+/*app.get('/getCalendar', (req, res) => {
     var command = 'curl ';
   if (req.query.property == 'Botz')
     command = command + 'https://ical.booking.com/v1/export?t=4a488311-a383-4796-91b8-cf3d8b877809'; 
@@ -23,7 +23,7 @@ app.get('/getCalendar', (req, res) => {
   child = exec(command, function(error, stdout, stderr) {
     res.status(200).send(stdout);
   })
-});
+});*/
 const port = process.env.PORT || 8080;
 const server = app.listen(8080, () => {
     console.log(`The application started on port ${server.address().port}`);

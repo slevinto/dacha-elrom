@@ -2,11 +2,11 @@ function add_recur_events() {
         $('#calendar').fullCalendar('addEventSource', expand_recur_events);  
 }
       
-function load_ics(property){
+/*function load_ics(property){
   $.get("/getCalendar?property=" + property, function(result){
     $('#calendar').fullCalendar('addEventSource', fc_events(result, {color: "#F87171"}))
   });  
-}
+}*/
     
 $(document).ready(function() {    
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
           $("#Botz")[0].style.display = 'none';
         } 
 
-        load_ics(searchParams.get('property'));
+        //load_ics(searchParams.get('property'));
         add_recur_events();
     
         $("#loader").hide();
