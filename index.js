@@ -25,6 +25,6 @@ app.get('/getCalendar', (req, res) => {
   })
 });
 const port = process.env.PORT || 8080;
-const server = app.listen(port, () => {
+const server = app.listen(8080, () => {
     console.log(`The application started on port ${server.address().port}`);
 });
