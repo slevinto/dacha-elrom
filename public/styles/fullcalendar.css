@@ -1,0 +1,562 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fc {
+	direction: ltr;
+	text-align: left;}
+
+.fc-rtl {
+	text-align: right;
+}
+
+body .fc { 
+	font-size: 1em;
+}
+
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-popover {
+	border-color: #ddd;
+	color: #3182cc;
+}
+
+.fc-unthemed .fc-today {
+	background: rgb(191 219 254);
+}
+
+.fc-nonbusiness { 
+	background: #d7d7d7;
+}
+
+.fc-icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	line-height: 1em;
+	font-size: 1em;
+	text-align: center;
+	overflow: hidden;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.fc-icon:after {
+	position: relative;
+	margin: 0 -1em; 
+}
+
+.fc-icon-left-single-arrow:after {
+	content: "\02039";
+	font-weight: bold;
+	font-size: 200%;
+	top: -7%;
+	left: 3%;
+}
+
+.fc-icon-right-single-arrow:after {
+	content: "\0203A";
+	font-weight: bold;
+	font-size: 200%;
+	top: -7%;
+	left: -3%;
+}
+
+.fc-icon-left-double-arrow:after {
+	content: "\000AB";
+	font-size: 160%;
+	top: -7%;
+}
+
+.fc-icon-right-double-arrow:after {
+	content: "\000BB";
+	font-size: 160%;
+	top: -7%;
+}
+
+.fc-icon-left-triangle:after {
+	content: "\25C4";
+	font-size: 125%;
+	top: 3%;
+	left: -2%;
+}
+
+.fc-icon-right-triangle:after {
+	content: "\25BA";
+	font-size: 125%;
+	top: 3%;
+	left: 2%;
+}
+
+.fc-icon-down-triangle:after {
+	content: "\25BC";
+	font-size: 125%;
+	top: 2%;
+}
+
+.fc-icon-x:after {
+	content: "\000D7";
+	font-size: 200%;
+	top: 6%;
+}
+
+.fc button {
+	/* dimensions */
+	margin: 0;
+	height: 2.1em;
+	padding: 0 .6em;	
+}
+	
+.fc button .fc-icon {
+	position: relative;
+	top: -0.05em; 
+	margin: 0 .2em;
+	vertical-align: middle;
+}
+	
+.fc-state-default {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#bee3f8));
+	background-image: -webkit-linear-gradient(top, #ffffff, #bee3f8);
+	background-image: -o-linear-gradient(top, #ffffff, #bee3f8);
+	background-image: linear-gradient(to bottom, #ffffff, #bee3f8);
+	border-color: #bee3f8;
+	color: #3182cc;	
+}
+
+.fc-state-disabled {
+	cursor: default;
+	background-image: none;
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+	box-shadow: none;
+}
+
+.fc-button-group {
+	display: inline-block;
+}
+
+.fc-popover .fc-header { 
+	padding: 2px 4px;
+}
+
+.fc-popover .fc-header .fc-title {
+	margin: 0 2px;
+}
+
+.fc-popover .fc-header .fc-close {
+	cursor: pointer;
+}
+
+.fc-ltr .fc-popover .fc-header .fc-title,
+.fc-rtl .fc-popover .fc-header .fc-close {
+	float: left;
+}
+
+.fc-rtl .fc-popover .fc-header .fc-title,
+.fc-ltr .fc-popover .fc-header .fc-close {
+	float: right;
+}
+
+.fc-unthemed .fc-popover .fc-header .fc-close {
+	font-size: .9em;
+	margin-top: 2px;
+}
+
+.fc-clear {
+	clear: both;
+}
+
+.fc-bg,
+.fc-bgevent-skeleton,
+.fc-highlight-skeleton,
+.fc-helper-skeleton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.fc-bg {
+	bottom: 0; 
+}
+
+.fc-bg table {
+	height: 100%; 
+}
+
+.fc table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 1em; 
+}
+
+.fc th {
+	text-align: center;
+}
+
+.fc th,
+.fc td {
+	border-style: solid;
+	border-width: 1px;
+	padding: 2px;
+	vertical-align: top;
+}
+
+.fc td.fc-today {
+	border-style: double; 
+}
+
+
+.fc-row table {
+	border-left: 0 hidden transparent;
+	border-right: 0 hidden transparent;
+    border-bottom: 0 hidden transparent; 
+}
+
+.fc-row:first-child table {
+	border-top: 0 hidden transparent; 
+}
+
+.fc-row {
+	position: relative;
+}
+
+.fc-row .fc-bgevent-skeleton,
+.fc-row .fc-highlight-skeleton {
+	bottom: 0; 
+}
+
+.fc-row .fc-bgevent-skeleton table,
+.fc-row .fc-highlight-skeleton table {
+	height: 100%; 
+}
+
+.fc-row .fc-highlight-skeleton td,
+.fc-row .fc-bgevent-skeleton td {
+	border-color: transparent;
+}
+
+
+.fc-row .fc-content-skeleton td,
+.fc-row .fc-helper-skeleton td {
+	background: none; /* in case <td>s are globally styled */
+	border-color: transparent;
+    border-bottom: 0;
+}
+
+.fc-row .fc-content-skeleton tbody td, 
+.fc-row .fc-helper-skeleton tbody td {
+	border-top: 0;
+}
+
+.fc-scroller { 
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.fc-scroller > * { 
+	position: relative; 
+	width: 100%; 
+	overflow: hidden; 
+}
+
+.fc-event {
+	position: relative; 
+	display: block; 
+	font-size: .85em;
+	line-height: 2;
+	font-weight: normal; 
+}
+
+.fc-event,
+.fc-event:hover,
+.ui-widget .fc-event {
+	color: #fff; 
+	text-decoration: none; 
+}
+
+.fc-event[href],
+.fc-event.fc-draggable {
+	cursor: pointer; 
+}
+
+.fc-not-allowed, 
+.fc-not-allowed .fc-event { 
+	cursor: not-allowed;
+}
+
+.fc-ltr .fc-h-event .fc-start-resizer,
+.fc-ltr .fc-h-event .fc-start-resizer:before,
+.fc-ltr .fc-h-event .fc-start-resizer:after,
+.fc-rtl .fc-h-event .fc-end-resizer,
+.fc-rtl .fc-h-event .fc-end-resizer:before,
+.fc-rtl .fc-h-event .fc-end-resizer:after {
+	right: auto; 
+	cursor: w-resize;
+}
+
+.fc-ltr .fc-h-event .fc-end-resizer,
+.fc-ltr .fc-h-event .fc-end-resizer:before,
+.fc-ltr .fc-h-event .fc-end-resizer:after,
+.fc-rtl .fc-h-event .fc-start-resizer,
+.fc-rtl .fc-h-event .fc-start-resizer:before,
+.fc-rtl .fc-h-event .fc-start-resizer:after {
+	left: auto; 
+	cursor: e-resize;
+}
+
+.fc-day-grid-event {
+	margin: 1px 2px 0; 
+	padding: 0 1px;
+}
+
+
+.fc-day-grid-event .fc-content { 
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.fc-day-grid-event .fc-time {
+	font-weight: bold;
+}
+
+.fc-day-grid-event .fc-resizer { 
+	left: -3px;
+	right: -3px;
+	width: 7px;
+}
+
+a.fc-more {
+	margin: 1px 3px;
+	font-size: .85em;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a.fc-more:hover {
+	text-decoration: underline;
+}
+
+.fc-limited { 
+	display: none;
+}
+
+.fc-more-popover .fc-event-container {
+	padding: 10px;
+}
+
+.fc-toolbar {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.fc-toolbar .fc-left {
+	float: left;
+}
+
+.fc-toolbar .fc-right {
+	float: right;
+}
+
+.fc-toolbar .fc-center {
+	display: inline-block;
+}
+
+.fc .fc-toolbar > * > * { 
+	float: left;
+	margin-left: .75em;
+}
+
+.fc .fc-toolbar > * > :first-child { 
+	margin-left: 0;
+}
+	
+.fc-toolbar h2 {
+	margin: 0;
+}
+
+.fc-toolbar button {
+	position: relative;
+}
+
+
+.fc-basicWeek-view .fc-content-skeleton,
+.fc-basicDay-view .fc-content-skeleton {
+	padding-top: 1px; 
+	padding-bottom: 1em; 
+}
+
+.fc-basic-view .fc-body .fc-row {
+	min-height: 2em; 
+}
+
+.fc-row.fc-rigid {
+	overflow: hidden;
+}
+
+.fc-row.fc-rigid .fc-content-skeleton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.fc-basic-view .fc-week-number,
+.fc-basic-view .fc-day-number {
+	padding: 0 2px;
+}
+
+.fc-basic-view .fc-week-number {
+	text-align: center;
+}
+
+.fc-basic-view .fc-week-number span {
+	display: inline-block;
+	min-width: 1.25em;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number {
+	text-align: right;
+}
+
+.fc-rtl .fc-basic-view .fc-day-number {
+	text-align: left;
+}
+
+.fc-day-number.fc-other-month {
+	opacity: 0.3;
+	filter: alpha(opacity=30); 	
+}
+
+.fc-agenda-view .fc-day-grid .fc-row {
+	min-height: 3em; 
+}
+
+.fc-agenda-view .fc-day-grid .fc-row .fc-content-skeleton {
+	padding-top: 1px; 
+	padding-bottom: 1em; 
+}
+
+.fc .fc-axis { 
+	vertical-align: middle;
+	padding: 0 4px;
+	white-space: nowrap;
+}
+
+.fc-ltr .fc-axis {
+	text-align: right;
+}
+
+.fc-rtl .fc-axis {
+	text-align: left;
+}
+
+.ui-widget td.fc-axis {
+	font-weight: normal;
+}
+
+.fc-time-grid {
+	min-height: 100%;
+}
+
+.fc-time-grid table { 
+	border: 0 hidden transparent;
+}
+
+
+.fc-time-grid .fc-content-col {
+	position: relative; 
+}
+
+.fc-time-grid .fc-slats .ui-widget-content {
+	background: none; 
+}
+
+.fc-time-grid .fc-highlight-container { 
+	position: relative; 
+}
+
+.fc-time-grid .fc-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+
+.fc-time-grid .fc-bgevent {
+	left: 0;
+	right: 0;
+}
+
+.fc-time-grid-event {
+	overflow: hidden; 
+}
+
+.fc-time-grid-event .fc-time {
+	font-size: .85em;
+	white-space: nowrap;
+}
+
+.fc-time-grid-event.fc-short .fc-content {
+	white-space: nowrap;
+}
+
+.fc-time-grid-event.fc-short .fc-time,
+.fc-time-grid-event.fc-short .fc-title {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.fc-time-grid-event.fc-short .fc-time span {
+	display: none; 
+}
+
+.fc-time-grid-event.fc-short .fc-time:before {
+	content: attr(data-start); 
+}
+
+.fc-time-grid-event.fc-short .fc-time:after {
+	content: "\000A0-\000A0"; 
+}
+
+.fc-time-grid-event.fc-short .fc-title {
+	font-size: .85em;
+	padding: 0; 
+}
+
+.fc-time-grid-event .fc-resizer {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 8px;
+	overflow: hidden;
+	line-height: 8px;
+	font-size: 11px;
+	text-align: center;
+	cursor: s-resize;
+}
+
+.fc-title {
+	visibility: hidden; 
+}
+  
+h2 {
+	color: #3182cc;
+	font-size: large;
+	font-weight: bold;
+}
+
+td.fc-day.fc-past {
+	background-color: #EEEEEE;
+}
+  

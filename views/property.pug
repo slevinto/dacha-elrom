@@ -1,0 +1,164 @@
+doctype html
+html(lang="he")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    title צימר אל-רום
+    link(rel="icon" type="image/x-icon" href="/img/primary.ico")
+
+    link(rel="stylesheet" href="/styles/style.css" type="text/css")
+    link(rel='stylesheet' href='/styles/fullcalendar.css' type="text/css")       
+    link(rel="stylesheet" href="/styles/tiny_slider.css" type="text/css") 
+    
+    script(src='/js/jquery.min.js' type="text/javascript")      
+    script(src="/js/main.js" type='text/javascript')      
+    script(src='/js/moment.min.js' type="application/javascript")
+    script(src='/js/fullcalendar.min.js' type="application/javascript")
+    script(src="/js/ical_fullcalendar.js" type="application/javascript")
+    script(src='/js/locale-all.js' type="application/javascript")
+    script(src="/js/ical.min.js" type="application/javascript")
+    script(src="/js/ical_events.js" type="application/javascript")
+    script(src="/js/tiny_slider.js" type="text/javascript")
+    script(src="/js/property.js" type="text/javascript")  
+   
+    include layout.pug
+
+    div.flex.justify-center.items-center(id="loader" style="display:none; position: absolute; width: 100%; height: 100%; background-size: cover; background: white; background-position: center")
+        img.text-center(src="/img/loader.gif" style="z-index: 10; width: 56px; height: 56px;")
+    
+    div(class="lg:flex")
+      div.text-center.p-6.w-full.text-blue-800.overflow-hidden
+        div(id="sale").font-bold.text-red-600.shadow.py-4.border-red
+        p.text-blue-600.text-xl.font-bold.py-4(id="title" dir="rtl")
+        table.float-right
+          tr
+            td.pb-2.text-right  
+              p(id="guests" dir="rtl") 
+            td.pb-2.text-right  
+              img.h-4.w-4.mx-4(src="/img/person-dress.svg")  
+          tr
+            td.pb-2.text-right  
+              p(id="price" dir="rtl") 
+              p(id="price2" dir="rtl")
+            td.pb-2.text-right
+              img.h-4.w-4.mx-4(src="/img/shekel-sign.svg")
+          tr
+            td.pb-2.text-right  
+              p(id="rule" dir="rtl")
+            td.pb-2.text-right  
+              img.h-4.w-4.mx-4(src="/img/clock.svg")
+          tr
+            td(colspan="2")
+              hr.my-4.float-right.w-full
+          tr
+            td.pb-2.text-right 
+              p(id="bed" dir="rtl")
+            td.pb-2.text-right  
+              img.mx-4.h-4.w-4(src="/img/bed.svg")
+          tr  
+            td.pb-2.text-right
+              p(dir="rtl") מטבח: כיריים אינדוקציה, מקרר גדול, קומקום חשמלי, מיקרוגל, כלים לבישול
+            td.pb-2.text-right  
+              img.mx-4.h-4.w-4(src="/img/kitchen-set.svg")
+          tr(id="fireplace")
+            td.pb-2.text-right
+              p(dir="rtl") קמין עצים
+            td.pb-2.text-right  
+              img.mx-4.h-4.w-4(src="/img/fire.svg")
+          tr 
+            td.pb-2.text-right  
+              p(dir="rtl") מזגן
+            td.pb-2.text-right  
+              img.mx-4.h-4.w-4(src="/img/temperature-arrow-up.svg")
+          tr 
+            td.pb-2.text-right 
+              p(dir="rtl") אינטרנט אלחוטי סיב אופטי
+            td.pb-2.text-right  
+              img.mx-4.h-4.w-4(src="/img/wifi.svg")
+          tr 
+            td.pb-2.text-right 
+              p(dir="rtl") בחוץ: פינת מנגל
+            td.pb-2.text-right  
+              img.mx-4.h-4.w-4(src="/img/tree.svg")
+
+      div.p-6.border-2.border-blue-200.m-4.shadow-xl.rounded-xl(id='Botz')
+        div.zimmerBotz
+          - 
+            var sources = [
+              "/img/slidesBotz/1.webp", 
+              "/img/slidesBotz/2.webp", 
+              "/img/slidesBotz/3.webp", 
+              "/img/slidesBotz/4.webp", 
+              "/img/slidesBotz/5.webp", 
+              "/img/slidesBotz/6.webp", 
+              "/img/slidesBotz/7.webp", 
+              "/img/slidesBotz/8.webp"
+            ]
+          each s in sources
+            img.h-64.shadow-sm.rounded-xl(src=s)          
+
+      div.p-6.border-2.border-blue-200.m-4.shadow-xl.rounded-xl(id='Etz')
+        div.zimmerEtz
+          - 
+            var sources = [
+              "/img/slidesEtz/1.webp", 
+              "/img/slidesEtz/2.webp", 
+              "/img/slidesEtz/3.webp", 
+              "/img/slidesEtz/4.webp", 
+              "/img/slidesEtz/5.webp", 
+              "/img/slidesEtz/6.webp", 
+              "/img/slidesEtz/7.webp", 
+              "/img/slidesEtz/8.webp"
+            ]
+          each s in sources
+            img.h-64.shadow-sm.rounded-xl(src=s)                         
+
+    div.text-center.py-8(id="calendar" class="w-5/6 lg:w-64" style="margin: auto")  
+
+    div(class="lg:flex")
+      div.p-6.text-blue-800.border-2.border-blue-200.m-4.shadow-xl.rounded-xl 
+        p.text-xl.text-center.font-bold.text-blue-600(dir="rtl") מסעדות בסביבה       
+        div(class="lg:flex")
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl") מסעדת הבוקרים  
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/2.jpg")
+            p(dir="rtl") מסעדת בשרים איכותית העושה שימוש בחומרי גלם מקומיים. חובבי הבשר יוכלו ליהנות ממנות שמקורן בבשר המגיע מעדרי הבקר האיכותיים של צפון רמת הגולן המעושן ומיושן במקום, לצד המנות מוגשים כמובן בירות ויינות מקומיים המיוצרים ביקבים ובמבשלות בגולן.&nbsp;
+          div.p-6.w-full  
+            p.text-lg.font-bold.pb-2(dir="rtl") בית קפה מטרלו 
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/1.jpg")
+            p(dir="rtl") במרחק של 10 דק' מהצימר בית קפה קטן בעין זיוון. שם תוכלו להתפנק בארוחת בוקר מגוונת ומפנקת במיוחד. ממליצות!
+          div.p-6.w-full                
+            p.text-lg.font-bold.pb-2(dir="rtl") לפיצלה
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/3.jpg")
+            p(dir="rtl") החל מהשעה 17:00 ועד חצות תוכלו להזמין פיצה חמה&nbsp; ישירות לצימר עם תוספות שאתם אוהבים וגם מבחר של סלטים ליד הפיצה.&nbsp;
+      div.p-6.p-6.text-blue-800.border-2.border-blue-200.m-4.shadow-xl.rounded-xl  
+        p.text-xl.text-center.font-bold.text-blue-600(dir="rtl") אטרקציות בסביבה       
+        div(class="lg:flex")
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl") בית קפה מטרלו 
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/2.jpg")
+            p(dir="rtl") צאו לטיול רגלי במגוון מסלולים המותאמים למשפחות, קבוצות מאורגנות ולבעלי צרכים מיוחדים 
+            br
+            p(dir="rtl") לטיולים הרפתקניים לתוך לוע הר געש בנטל לאורו של הירח 
+            br
+            p(dir="rtl") דורון שמיר:052-65177444 
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl") סיורים רגליים                
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/3.jpg")
+            p(dir="rtl") החווה מציעה מגוון פעילויות לילדים ולמבוגרים. 
+            p(dir="rtl") טיולי רכיבה מגוונים עם נוף משגע סביב הר בנטל ובשטחי המטעים של מרום גולן לטיולים אילו לא נדרש ניסיון רכיבה קודם.</span></span></span></p>
+            p(dir="rtl") לפרטים נוספים ותיאום מראש: 
+            p(dir="rtl") 052-8514434
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl") טיולי טרקטורונים              
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/4.jpg")
+            p(dir="rtl") טיולים מלווים על ידי צוות הדרכה מיומן ומנוסה, אין צורך בניסיון קודם. הנהיגה היא לבעלי רישיון לרכב פרטי. הנסיעה בכלים מסוג: טומקרים או טירקס.&nbsp;<br class="wixui-rich-text__text">
+            p(dir="rtl") שעות פעילות א'-ה' 09:00-16:00
+            p(dir="rtl") שישי :09:00-14:00
+            p(dir="rtl") שבת/חג : סגור
+            p(dir="rtl") להזמנות 04-6960483/ 052-8695832
+
+a.back-to-top.w-10.h-10.fixed.bottom-0.left-0.mb-5.mr-5.flex.items-center.justify-center.rounded-full.bg-blue-600.text-white.text-lg.z-20(href="#" style="display: none") 
+  img.h-6.w-6(src="/img/up-long.svg")
+
