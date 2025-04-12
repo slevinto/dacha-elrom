@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     let searchParams = new URLSearchParams(window.location.search);  
     
-    $.get("https://docs.google.com/document/d/1JI6N6Kh88Kj8dplZnNofuuyphYPVB2um4YXvqoKWR9o/edit?usp=sharing").success(function(details){ 
+    $.get("https://docs.google.com/document/d/1P5O9apcERrO1yG0YphH58jl_6Lf5Ck9HwcZTLM4HRl4/edit?usp=sharing").success(function(details){ 
             
         let zimmerDetails;
         if (window.matchMedia("(max-width: 767px)").matches)  // this is mobile device
@@ -47,40 +47,28 @@ $(document).ready(function() {
                   zimmerDetails = JSON.parse(JSON.parse(element.innerText.split("DOCS_modelChunk = ")[1].split(';')[0])[0].s);
           });          
         }
-
-        let currentZimmerDetails = searchParams.get('property') == 'Botz' ? zimmerDetails[1] : zimmerDetails[0];
-        currentZimmerDetails.sale.forEach((element) =>
+        
+        zimmerDetails.sale.forEach((element) =>
         {
           $('#sale').append('<p style="margin: 10px">' + element + '</p>');
         });
 
-        $("#title")[0].innerText = currentZimmerDetails.title;
-        $("#guests")[0].innerText = currentZimmerDetails.guestsNumber;
-        $("#price")[0].innerText = "  מחיר: " + currentZimmerDetails.price + " \u20AA " + " לזוג " ;
-        $("#price2")[0].innerText =  "בן אדם נוסף מגיל שנתיים 100 " + "\u20AA"; 
+        $("#title")[0].innerText = zimmerDetails.title;
+        $("#guests")[0].innerText = zimmerDetails.guestsNumber;
+        $("#price")[0].innerText = "  מחיר: " + zimmerDetails.price;
         $("#rule")[0].innerText = "הגעה מ 15:00, עזיבה עד 11:00";
-        $("#bed")[0].innerText = currentZimmerDetails.bed;        
+        $("#bed")[0].innerText = zimmerDetails.bed;        
 
-        if (searchParams.get('property') == 'Botz')    
-        {
-          $("#Etz")[0].style.display = 'none';
-        }  
         
-        if (searchParams.get('property') == 'Etz')
-        {
-          $('#fireplace')[0].style.display = 'none';
-          $("#Botz")[0].style.display = 'none';
-        } 
-
         //load_ics(searchParams.get('property'));
         add_recur_events();
     
         $("#loader").hide();
 
         tns({
-          container: '.zimmer' + searchParams.get('property'),            
+          container: '.zimmer',            
           autoplay: true,
-          speed: 1000,
+          speed: 50,
           autoplayButtonOutput: false,
           mouseDrag: true,
           gutter: 15,

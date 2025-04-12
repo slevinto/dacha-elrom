@@ -1,8 +1,8 @@
 $(document).ready(function() {    
 
   accessibility_rtl = true;
-  pixel_from_side = 190;
-  pixel_from_start = 21;
+  pixel_from_side = 10;
+  pixel_from_start = 50;
   
   window.onscroll = function () {
       var backToTop = document.querySelector(".back-to-top");
@@ -14,8 +14,8 @@ $(document).ready(function() {
   };
 })
 
-function getProperty(property) {
-  window.location = "/property?property=" + property;  
+function getProperty() {
+  window.location = "/property";  
 }
 
 

@@ -58,17 +58,17 @@ html(lang="he")
               img.mx-4.h-4.w-4(src="/img/bed.svg")
           tr  
             td.pb-2.text-right
-              p(dir="rtl") מטבח: כיריים אינדוקציה, מקרר גדול, קומקום חשמלי, מיקרוגל, כלים לבישול
+              p(dir="rtl") מטבח: כירה חשמלית, מקרר, מיקרוגל, קומקום חשמלי, כלים לבישול 
             td.pb-2.text-right  
               img.mx-4.h-4.w-4(src="/img/kitchen-set.svg")
           tr(id="fireplace")
             td.pb-2.text-right
-              p(dir="rtl") קמין עצים
+              p(dir="rtl")  ריהוט נוסף: שידת מגירות, 2 טלוויזיות חכמות, פינת אוכל, ארון
             td.pb-2.text-right  
               img.mx-4.h-4.w-4(src="/img/fire.svg")
           tr 
             td.pb-2.text-right  
-              p(dir="rtl") מזגן
+              p(dir="rtl") שני מזגנים
             td.pb-2.text-right  
               img.mx-4.h-4.w-4(src="/img/temperature-arrow-up.svg")
           tr 
@@ -78,41 +78,26 @@ html(lang="he")
               img.mx-4.h-4.w-4(src="/img/wifi.svg")
           tr 
             td.pb-2.text-right 
-              p(dir="rtl") בחוץ: פינת מנגל
+              p(dir="rtl") בחוץ: מרפסת גדולה, פינת ישיבה, מנגל
             td.pb-2.text-right  
               img.mx-4.h-4.w-4(src="/img/tree.svg")
 
-      div.p-6.border-2.border-blue-200.m-4.shadow-xl.rounded-xl(id='Botz')
-        div.zimmerBotz
+      div.p-6.border-2.border-blue-200.m-4.shadow-xl.rounded-xl
+        div.zimmer
           - 
             var sources = [
-              "/img/slidesBotz/1.webp", 
-              "/img/slidesBotz/2.webp", 
-              "/img/slidesBotz/3.webp", 
-              "/img/slidesBotz/4.webp", 
-              "/img/slidesBotz/5.webp", 
-              "/img/slidesBotz/6.webp", 
-              "/img/slidesBotz/7.webp", 
-              "/img/slidesBotz/8.webp"
+              "/img/slides/1.jpg", 
+              "/img/slides/2.jpg", 
+              "/img/slides/3.jpg", 
+              "/img/slides/4.jpg", 
+              "/img/slides/5.jpg", 
+              "/img/slides/6.jpg", 
+              "/img/slides/7.jpg", 
+              "/img/slides/8.jpg",
+              "/img/slides/9.jpg"
             ]
           each s in sources
-            img.h-64.shadow-sm.rounded-xl(src=s)          
-
-      div.p-6.border-2.border-blue-200.m-4.shadow-xl.rounded-xl(id='Etz')
-        div.zimmerEtz
-          - 
-            var sources = [
-              "/img/slidesEtz/1.webp", 
-              "/img/slidesEtz/2.webp", 
-              "/img/slidesEtz/3.webp", 
-              "/img/slidesEtz/4.webp", 
-              "/img/slidesEtz/5.webp", 
-              "/img/slidesEtz/6.webp", 
-              "/img/slidesEtz/7.webp", 
-              "/img/slidesEtz/8.webp"
-            ]
-          each s in sources
-            img.h-64.shadow-sm.rounded-xl(src=s)                         
+            img.h-64.shadow-sm.rounded-xl(src=s)                            
 
     div.text-center.py-8(id="calendar" class="w-5/6 lg:w-64" style="margin: auto")  
 
