@@ -37,7 +37,7 @@ $(document).ready(function() {
         let zimmerDetails;
         if (window.matchMedia("(max-width: 767px)").matches)  // this is mobile device
         {   
-          zimmerDetails = JSON.parse($(details).find("div")[0].innerText);
+          zimmerDetails = JSON.parse($(details).find("div")[0].innerText.replace(/\u00A0/g, ' '));
         }
         else  // this is tablet or desktop device
         {   
