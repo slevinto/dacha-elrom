@@ -5,24 +5,29 @@ body(style="font-family: 'Assistant'")
   div.h-20
     div.navigation.left-0.w-full.sticky.z-3.top-0.fixed.z-30
       nav.justify-between.items-center.flex.bg-gradient-to-l.from-blue-200.py-4
-        div.text-right.px-1(class="flex") 
-          a.navbar-brand.justify-center.items-center.px-1.border-blue-600.border-r-2.border-0(href="https://www.waze.com/ru/live-map/directions?navigate=yes&to=ll.33.131%2C35.77")
-            p.text-center.text-blue-600.font-bold(class="text-sm lg:text-2xl ") דאצ'יה אל-רום
-          a.navbar-brand.justify-center.items-center.px-1.border-blue-700.border-r-2.border-0(href="tel:+972523731388")
-            p.text-blue-700.text-center.font-bold(class="text-sm lg:text-2xl ") 0523-731-388  
-          a.navbar-brand.items-center.mx-1(href="https://www.facebook.com/people/%D7%93%D7%A6%D7%90-Dacha-%D0%94%D0%B0%D1%87%D0%B0/61560530657685/?rdid=a1mKr0hl0FEe7Ziq&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16NZfjpGzt%2F") 
-            img(class="h-8 lg:h-9 w-8 lg:w-9" src="/img/facebook.svg")
-          a.navbar-brand.items-center(href="https://www.instagram.com/dacha.elrom/") 
-           img(class="h-8 lg:h-9 w-8 lg:w-9" src="/img/instagram.svg")
-        div.text-left.mx-2(class="flex") 
-          a.navbar-brand.easy-in-out.duration-300(href="https://www.waze.com/ru/live-map/directions?navigate=yes&to=ll.33.131%2C35.77")
-            div.contact-icon.bg-blue-600(class="h-6 lg:h-8 w-6 lg:w-8")
-              img.m-1(src="/img/waze.svg")           
-          a.navbar-brand.items-center.px-1(href="tel:+972523731388")
-            div.contact-icon.bg-blue-600(class="h-6 lg:h-8 w-6 lg:w-8")
-              img.m-1(src="/img/phone.svg")                 
-          a.navbar-brand.items-center(href="https://wa.me/972523731388") 
-            div.contact-icon.bg-blue-600(class="h-6 lg:h-8 w-6 lg:w-8")
-              img.m-1(src="/img/whatsapp.svg")
+        div.text-right.flex.justify-between.mx-1(class="w-1/2 lg:w-1/4")
+          a.navbar-brand.justify-center.items-center.border-blue-600.border-r-2.border-0(href="https://www.waze.com/ru/live-map/directions?navigate=yes&to=ll.33.131%2C35.77")
+            p.text-center.text-blue-600.font-bold.mx-1(class="text-xs lg:text-2xl ") דצ'יה אל-רום
+          a.navbar-brand.justify-center.items-center.border-blue-700.border-r-2.border-0(href="tel:+972523731388")
+            p.text-blue-700.text-center.font-bold.mx-1(class="text-sm lg:text-2xl ") 0523-731-388  
+        div.text-right.flex.justify-between(class="w-1/6 lg:w-1/4") 
+          a(href="https://www.facebook.com/people/%D7%93%D7%A6%D7%90-Dacha-%D0%94%D0%B0%D1%87%D0%B0/61560530657685/?rdid=a1mKr0hl0FEe7Ziq&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16NZfjpGzt%2F") 
+            div.contact-icon.bg-blue-600.p-1(class="h-6 lg:h-8 w-6 lg:w-8")
+              img.p-1(src="/img/facebook.svg")
+          a(href="https://www.instagram.com/dacha.elrom/") 
+            div.contact-icon.bg-blue-600.p-1(class="h-6 lg:h-8 w-6 lg:w-8")
+              img.p-1(class="h-8 lg:h-9 w-8 lg:w-9" src="/img/instagram.svg")
+        div.text-left.flex.justify-between.mx-2(class="w-1/3 lg:w-1/6")
+          div.contact-icon.bg-blue-600(class="h-6 lg:h-8 w-6 lg:w-8")
+            img.p-1(src="/img/accessible.svg" class="h-8 w-8")  
+          a(href="https://www.waze.com/ru/live-map/directions?navigate=yes&to=ll.33.131%2C35.77")
+            div.contact-icon.bg-blue-600.p-1(class="h-6 lg:h-8 w-6 lg:w-8")
+              img.p-1(src="/img/waze.svg")           
+          a(href="tel:+972523731388")
+            div.contact-icon.bg-blue-600.p-1(class="h-6 lg:h-8 w-6 lg:w-8")
+              img.p-1(src="/img/phone.svg")                 
+          a(href="https://wa.me/972523731388") 
+            div.contact-icon.bg-blue-600.p-1(class="h-6 lg:h-8 w-6 lg:w-8")
+              img.p-1(src="/img/whatsapp.svg")
           
 

@@ -2,11 +2,11 @@ function add_recur_events() {
         $('#calendar').fullCalendar('addEventSource', expand_recur_events);  
 }
       
-/*function load_ics(property){
-  $.get("/getCalendar?property=" + property, function(result){
+function load_ics(property){
+  $.get("/getCalendar", function(result){
     $('#calendar').fullCalendar('addEventSource', fc_events(result, {color: "#F87171"}))
   });  
-}*/
+}
     
 $(document).ready(function() {    
 
@@ -50,17 +50,24 @@ $(document).ready(function() {
         
         zimmerDetails.sale.forEach((element) =>
         {
-          $('#sale').append('<p style="margin: 10px">' + element + '</p>');
+          $('#sale').append('<p style="margin: 10px; color:red;">' + element + '</p>');
         });
 
         $("#title")[0].innerText = zimmerDetails.title;
         $("#guests")[0].innerText = zimmerDetails.guestsNumber;
-        $("#price")[0].innerText = "  מחיר: " + zimmerDetails.price;
+        $("#price")[0].innerText = "  מחיר: ";        
+        zimmerDetails.prices.forEach((element) =>
+        {
+          $('#price').append('<p><strong>' + element.category + ': </strong>' + 
+                              element.price + '</p>');          
+        });
+
+
         $("#rule")[0].innerText = "הגעה מ 15:00, עזיבה עד 11:00";
         $("#bed")[0].innerText = zimmerDetails.bed;        
 
         
-        //load_ics(searchParams.get('property'));
+        load_ics(searchParams.get('property'));
         add_recur_events();
     
         $("#loader").hide();

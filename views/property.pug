@@ -4,7 +4,7 @@ html(lang="he")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
-    title דאצ'יה אל-רום
+    title דצ'יה אל-רום
     link(rel="icon" href="/img/primary.ico?v=2")
 
     link(rel="stylesheet" href="/styles/style.css" type="text/css")
@@ -58,12 +58,16 @@ html(lang="he")
               img.mx-4.h-4.w-4(src="/img/bed.svg")
           tr  
             td.pb-2.text-right
-              p(dir="rtl") מטבח: כירה חשמלית, מקרר, מיקרוגל, קומקום חשמלי, כלים לבישול 
+              p(dir="rtl") 
+                strong מטבח:
+              p  כירה חשמלית, מקרר, מיקרוגל, קומקום חשמלי, כלים לבישול 
             td.pb-2.text-right  
               img.mx-4.h-4.w-4(src="/img/kitchen-set.svg")
           tr(id="fireplace")
             td.pb-2.text-right
-              p(dir="rtl")  ריהוט נוסף: שידת מגירות, 2 טלוויזיות חכמות, פינת אוכל, ארון
+              p(dir="rtl") 
+                strong ריהוט נוסף: 
+              p שידת מגירות, 2 טלוויזיות חכמות, פינת אוכל, ארון
             td.pb-2.text-right  
               img.mx-4.h-4.w-4(src="/img/fire.svg")
           tr 
@@ -78,7 +82,9 @@ html(lang="he")
               img.mx-4.h-4.w-4(src="/img/wifi.svg")
           tr 
             td.pb-2.text-right 
-              p(dir="rtl") בחוץ: מרפסת גדולה, פינת ישיבה, מנגל
+              p(dir="rtl")
+                strong בחוץ: 
+              p מרפסת גדולה, פינת ישיבה, מנגל
             td.pb-2.text-right  
               img.mx-4.h-4.w-4(src="/img/tree.svg")
 
@@ -97,53 +103,77 @@ html(lang="he")
               "/img/slides/9.jpg"
             ]
           each s in sources
-            img.h-64.shadow-sm.rounded-xl(src=s)                            
+            img.shadow-sm.rounded-xl(src=s style="height: 400px")                            
 
     div.text-center.py-8(id="calendar" class="w-5/6 lg:w-64" style="margin: auto")  
 
-    div(class="lg:flex")
+    div
       div.p-6.text-blue-800.border-2.border-blue-200.m-4.shadow-xl.rounded-xl 
         p.text-xl.text-center.font-bold.text-blue-600(dir="rtl") מסעדות בסביבה       
         div(class="lg:flex")
           div.p-6.w-full
             p.text-lg.font-bold.pb-2(dir="rtl") מסעדת הבוקרים  
-            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/2.jpg")
-            p(dir="rtl") מסעדת בשרים איכותית העושה שימוש בחומרי גלם מקומיים. חובבי הבשר יוכלו ליהנות ממנות שמקורן בבשר המגיע מעדרי הבקר האיכותיים של צפון רמת הגולן המעושן ומיושן במקום, לצד המנות מוגשים כמובן בירות ויינות מקומיים המיוצרים ביקבים ובמבשלות בגולן.&nbsp;
-          div.p-6.w-full  
-            p.text-lg.font-bold.pb-2(dir="rtl") בית קפה מטרלו 
             img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/1.jpg")
-            p(dir="rtl") במרחק של 10 דק' מהדאצ'יה בית קפה קטן בעין זיוון. שם תוכלו להתפנק בארוחת בוקר מגוונת ומפנקת במיוחד. ממליצות!
+            p(dir="rtl") מסעדת בשרים איכותית העושה שימוש בחומרי גלם מקומיים. חובבי הבשר יוכלו ליהנות ממנות שמקורן בבשר המגיע מעדרי הבקר האיכותיים של צפון רמת הגולן המעושן ומיושן במקום, לצד המנות מוגשים כמובן בירות ויינות מקומיים המיוצרים ביקבים ובמבשלות בגולן.&nbsp;
           div.p-6.w-full                
             p.text-lg.font-bold.pb-2(dir="rtl") לפיצלה
-            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/3.jpg")
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/2.jpg")
             p(dir="rtl") החל מהשעה 17:00 ועד חצות תוכלו להזמין פיצה חמה&nbsp; ישירות לדאצ'יה עם תוספות שאתם אוהבים וגם מבחר של סלטים ליד הפיצה.&nbsp;
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl") פאב הדורבן, קיבוץ אל-רום   
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/3.jpg")
+            p(dir="rtl") המקום מציע חוויה ייחודית, עם אווירה נעימה וחמימה. אצלנו כל אחד מוצא את מקומו בהתאם למצב הרוח. ישיבה על הבר, וצלילה לשיחה עם הברמנים. טורניר ביליארד עם המקצוענים המקומיים, משחק קליעה למטרה בין חברים, רביצה על הספות, או פיזוז לצלילי המוסיקה.
+            p(dir="rtl") 04-6838035
+          div.p-6.w-full                
+            p.text-lg.font-bold.pb-2(dir="rtl") יקב פלטר, עין זיוון
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/4.jpg")
+            p(dir="rtl") האירוח שלנו מתקיים בחלל הייצור לצד מיכלי ההתססה והחביות.  ניתן לטעום ממגוון היינות של פלטר ומטר וממוצרי המזקקה, כמו כן ניתן לרכוש כוס או בקבוק לישיבה במקום. לצד היין אפשר להזמין פלטה של גבינות עיזים מקומיות, לחם ושמן זית. בימי שישי, שבת וחג מתארחים במטבח שלנו שפים עם תפריט משתנה.
+            p(dir="rtl") 054-7491616
+          div.p-6.w-full                
+            p.text-lg.font-bold.pb-2(dir="rtl") המרפסת, מרום גולן
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesOhel/5.jpg")
+            p(dir="rtl") בית קפה קטן ואינטימי הנמצא במרפסת ביתי בקיבוץ מרום גולן בו אני מגישה מאפים מתוקים ומלוחים עוגות ועוגיות.
+            p(dir="rtl") 050-5303361
       div.p-6.p-6.text-blue-800.border-2.border-blue-200.m-4.shadow-xl.rounded-xl  
         p.text-xl.text-center.font-bold.text-blue-600(dir="rtl") אטרקציות בסביבה       
         div(class="lg:flex")
           div.p-6.w-full
-            p.text-lg.font-bold.pb-2(dir="rtl") בית קפה מטרלו 
-            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/2.jpg")
-            p(dir="rtl") צאו לטיול רגלי במגוון מסלולים המותאמים למשפחות, קבוצות מאורגנות ולבעלי צרכים מיוחדים 
-            br
-            p(dir="rtl") לטיולים הרפתקניים לתוך לוע הר געש בנטל לאורו של הירח 
-            br
-            p(dir="rtl") דורון שמיר:052-65177444 
+            p.text-lg.font-bold.pb-2(dir="rtl") טיול עששיות ביער אודם
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/1.jpg")
+            p(dir="rtl") אגדות יער הם חלק חשוב ובלתי נפרד מהילדות של כולנו. פחד, אומץ, סקרנות, טוב ורע- הם רק חלק קטן ממה שלמדנו דרכם. יער אודם השופע בחי וצומח, רק מזמין ומעודד לחוות ולייצר מציאות אגדתית משלכם.
+            p(dir="rtl") 052-3601513
+            p(dir="rtl") 050-6894560
           div.p-6.w-full
-            p.text-lg.font-bold.pb-2(dir="rtl") סיורים רגליים                
-            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/3.jpg")
+            p.text-lg.font-bold.pb-2(dir="rtl") טיול סוסים                
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/2.jpg")
             p(dir="rtl") החווה מציעה מגוון פעילויות לילדים ולמבוגרים. 
             p(dir="rtl") טיולי רכיבה מגוונים עם נוף משגע סביב הר בנטל ובשטחי המטעים של מרום גולן לטיולים אילו לא נדרש ניסיון רכיבה קודם.</span></span></span></p>
             p(dir="rtl") לפרטים נוספים ותיאום מראש: 
             p(dir="rtl") 052-8514434
           div.p-6.w-full
             p.text-lg.font-bold.pb-2(dir="rtl") טיולי טרקטורונים              
-            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/4.jpg")
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/3.jpg")
             p(dir="rtl") טיולים מלווים על ידי צוות הדרכה מיומן ומנוסה, אין צורך בניסיון קודם. הנהיגה היא לבעלי רישיון לרכב פרטי. הנסיעה בכלים מסוג: טומקרים או טירקס.&nbsp;<br class="wixui-rich-text__text">
             p(dir="rtl") שעות פעילות א'-ה' 09:00-16:00
             p(dir="rtl") שישי :09:00-14:00
             p(dir="rtl") שבת/חג : סגור
             p(dir="rtl") להזמנות 04-6960483/ 052-8695832
-
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl")  החווה ביער אודם
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/4.jpg")
+            p(dir="rtl") חוויה מעצימה וייחודית! סיורים מרתקים ופעילויות בחוות החופש – נלמד על עולם החי בדרך אינטראקטיבית ומעמיקה. נחווה מגע ישיר עם בעלי החיים, נלמד על עולם החי, על חמלה, כבוד ואהבה ללא תנאים, נאכיל ונקשיב לסיפורים מרתקים.
+            p(dir="rtl") 054-7653123 
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl")  טריפונל באולינג, מג'דל שמס
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/5.jpg")
+            p(dir="rtl")   מתחם באולינג חדש המתקדם בעולם!  במתחם תמצאו שני שולחנות סנוקר, שולחן הוקי אוויר ו 2 שולחנות שפלדבורד- המשחק היחידי בארץ. במתחם תיהנו מבית קפה וגם בירה קרה מאוד מהחבית.
+            p(dir="rtl") 052-7367570
+          div.p-6.w-full
+            p.text-lg.font-bold.pb-2(dir="rtl") ג'יפוייקה - טיולי ג'יפים, מרום גולן
+            img.my-4.shadow-xl.rounded-xl(src="/img/slidesAttrakziot/6.jpg")
+            p(dir="rtl") טיולי ג'יפים והדרכות במגוון נופים ואתרים עם מדריך מוסמך יליד האזור. נסייר במרחבים הפתוחים של הגולן ועמק החולה נתרשם מבעלי החיים הצומח ההיסטוריה ההתיישבות הנופים מורשת הקרב גיאופוליטיקה ומכל מה שהאזור מציע.
+            p(dir="rtl") 052-8940362
+          
 a.back-to-top.w-10.h-10.fixed.bottom-0.left-0.mb-5.mr-5.flex.items-center.justify-center.rounded-full.bg-blue-600.text-white.text-lg.z-20(href="#" style="display: none") 
   img.h-6.w-6(src="/img/up-long.svg")
 
