@@ -1,18 +1,16 @@
-function add_recur_events() {
+/*function add_recur_events() {
         $('#calendar').fullCalendar('addEventSource', expand_recur_events);  
-}
+}*/
       
-function load_ics(property){
+/*function load_ics(property){
   $.get("/getCalendar", function(result){
     $('#calendar').fullCalendar('addEventSource', fc_events(result, {color: "#F87171"}))
   });  
-}
+}*/
     
 $(document).ready(function() {    
 
-    $("#loader").show();
-
-    $('#calendar').fullCalendar({
+    /*$('#calendar').fullCalendar({
         header: {
             left: 'next,prev',            
         },
@@ -28,11 +26,11 @@ $(document).ready(function() {
             start: moment().format('YYYY-MM-DD'),
             end: '2100-01-01' 
         }
-    });   
+    });*/   
 
     let searchParams = new URLSearchParams(window.location.search);  
     
-    $.get("https://docs.google.com/document/d/1P5O9apcERrO1yG0YphH58jl_6Lf5Ck9HwcZTLM4HRl4/edit?usp=sharing").success(function(details){ 
+    $.get("https://docs.google.com/document/d/1EqHSTo6QGvcTFWmVeanfG4u4lDTK_zkbJhYCss8YG4o/edit?tab=t.0#heading=h.7vee84u06gq4").success(function(details){ 
             
         let zimmerDetails;
         if (window.matchMedia("(max-width: 767px)").matches)  // this is mobile device
@@ -54,21 +52,62 @@ $(document).ready(function() {
         });
 
         $("#title")[0].innerText = zimmerDetails.title;
-        $("#guests")[0].innerText = zimmerDetails.guestsNumber;
-        $("#price")[0].innerText = "  מחיר: ";        
+        
+        $("#occupancy").append('<div class="flex items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">' + 
+          zimmerDetails.occupancy.title + 
+          '</p><p style="margin-right: 10px;">' 
+          + zimmerDetails.occupancy.description  + '</p></div>'); 
+
+        var appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">מחירים:</p>';
         zimmerDetails.prices.forEach((element) =>
         {
-          $('#price').append('<p><strong>' + element.category + ': </strong>' + 
-                              element.price + '</p>');          
+          appendString = appendString + '<p style="font-size: 16px;">' + element.category + " - " + element.price + '</p>';          
         });
-
-
-        $("#rule")[0].innerText = "הגעה מ 15:00, עזיבה עד 11:00";
-        $("#bed")[0].innerText = zimmerDetails.bed;        
-
+        appendString = appendString + '</div>';
+        $("#price").append(appendString);
         
-        load_ics(searchParams.get('property'));
-        add_recur_events();
+        appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">זמני אירוח:</p>';
+        zimmerDetails.timearrival.forEach((element) =>
+        {
+          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';          
+        });
+        appendString = appendString + '</div>';
+        $("#timearrival").append(appendString);
+
+        appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">מקומות שינה בכל יחידה:</p>';
+        zimmerDetails.bed.forEach((element) =>
+        {
+          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';          
+        });  
+        appendString = appendString + '</div>';
+        $("#bed").append(appendString);
+        
+        appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; "> אבזור ונוחות:</p>';
+        zimmerDetails.accessories.forEach((element) =>
+        {
+            appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';        
+        });
+        appendString = appendString + '</div>';
+        $("#accessories").append(appendString);
+
+        appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; "> מטבחון מאובזר בכל יחידה:</p>';
+        zimmerDetails.kitchen.forEach((element) =>
+        {
+          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';           
+        });
+        appendString = appendString + '</div>';
+        $("#kitchen").append(appendString);
+
+        appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">פינת ישיבה חיצונית:</p>';
+        zimmerDetails.outdoor.forEach((element) =>
+        {
+          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';        
+        });
+        appendString = appendString + '</div>';
+        $("#outdoor").append(appendString);
+
+        //load_ics(searchParams.get('property'));
+        //add_recur_events();
     
         $("#loader").hide();
 

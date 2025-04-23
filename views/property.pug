@@ -8,17 +8,17 @@ html(lang="he")
     link(rel="icon" href="/img/primary.ico?v=2")
 
     link(rel="stylesheet" href="/styles/style.css" type="text/css")
-    link(rel='stylesheet' href='/styles/fullcalendar.css' type="text/css")       
+    //link(rel='stylesheet' href='/styles/fullcalendar.css' type="text/css")       
     link(rel="stylesheet" href="/styles/tiny_slider.css" type="text/css") 
     
     script(src='/js/jquery.min.js' type="text/javascript")      
     script(src="/js/main.js" type='text/javascript')      
-    script(src='/js/moment.min.js' type="application/javascript")
-    script(src='/js/fullcalendar.min.js' type="application/javascript")
-    script(src="/js/ical_fullcalendar.js" type="application/javascript")
-    script(src='/js/locale-all.js' type="application/javascript")
-    script(src="/js/ical.min.js" type="application/javascript")
-    script(src="/js/ical_events.js" type="application/javascript")
+    //script(src='/js/moment.min.js' type="application/javascript")
+    //script(src='/js/fullcalendar.min.js' type="application/javascript")
+    //script(src="/js/ical_fullcalendar.js" type="application/javascript")
+    //script(src='/js/locale-all.js' type="application/javascript")
+    // script(src="/js/ical.min.js" type="application/javascript")
+    //script(src="/js/ical_events.js" type="application/javascript")
     script(src="/js/tiny_slider.js" type="text/javascript")
     script(src="/js/property.js" type="text/javascript")  
    
@@ -28,67 +28,45 @@ html(lang="he")
         img.text-center(src="/img/loader.gif" style="z-index: 10; width: 56px; height: 56px;")
     
     div(class="lg:flex" style="font-family: 'Assistant'")
-      div.text-center.p-6.w-full.text-blue-800.overflow-hidden
-        div(id="sale").font-bold.text-red-600.shadow.py-4.border-red
-        p.text-blue-600.text-xl.font-bold.py-4(id="title" dir="rtl")
-        table.float-right
-          tr
-            td.pb-2.text-right  
-              p(id="guests" dir="rtl") 
-            td.pb-2.text-right  
-              img.h-4.w-4.mx-4(src="/img/person-dress.svg")  
-          tr
-            td.pb-2.text-right  
-              p(id="price" dir="rtl") 
-              p(id="price2" dir="rtl")
-            td.pb-2.text-right
-              img.h-4.w-4.mx-4(src="/img/shekel-sign.svg")
-          tr
-            td.pb-2.text-right  
-              p(id="rule" dir="rtl")
-            td.pb-2.text-right  
-              img.h-4.w-4.mx-4(src="/img/clock.svg")
-          tr
-            td(colspan="2")
-              hr.my-4.float-right.w-full
-          tr
-            td.pb-2.text-right 
-              p(id="bed" dir="rtl")
-            td.pb-2.text-right  
-              img.mx-4.h-4.w-4(src="/img/bed.svg")
-          tr  
-            td.pb-2.text-right
-              p(dir="rtl") 
-                strong מטבח:
-              p  כירה חשמלית, מקרר, מיקרוגל, קומקום חשמלי, כלים לבישול 
-            td.pb-2.text-right  
-              img.mx-4.h-4.w-4(src="/img/kitchen-set.svg")
-          tr(id="fireplace")
-            td.pb-2.text-right
-              p(dir="rtl") 
-                strong ריהוט נוסף: 
-              p שידת מגירות, 2 טלוויזיות חכמות, פינת אוכל, ארון
-            td.pb-2.text-right  
-              img.mx-4.h-4.w-4(src="/img/fire.svg")
-          tr 
-            td.pb-2.text-right  
-              p(dir="rtl") שני מזגנים
-            td.pb-2.text-right  
-              img.mx-4.h-4.w-4(src="/img/temperature-arrow-up.svg")
-          tr 
-            td.pb-2.text-right 
-              p(dir="rtl") אינטרנט אלחוטי סיב אופטי
-            td.pb-2.text-right  
-              img.mx-4.h-4.w-4(src="/img/wifi.svg")
-          tr 
-            td.pb-2.text-right 
-              p(dir="rtl")
-                strong בחוץ: 
-              p מרפסת גדולה, פינת ישיבה, מנגל
-            td.pb-2.text-right  
-              img.mx-4.h-4.w-4(src="/img/tree.svg")
+      div.shadow-xl.rounded-xl.m-4(class="lg:w-1/4")
+        div(id="sale").font-bold.text-red-600.shadow.py-4.border-red.text-center
+        p.text-blue-600.text-xl.font-bold.p-4.my-4(id="title" dir="rtl" style="font-family: 'Stam'")
+        div.flex.items-center(dir="rtl")
+          img.h-4.w-4.mx-4(src="/img/person-dress.svg") 
+          p(id="occupancy")              
+        hr.m-4
 
-      div.p-6.border-2.border-blue-200.m-4.shadow-xl.rounded-xl
+        div.flex.items-center(dir="rtl")
+          img.h-4.w-4.mx-4(src="/img/shekel-sign.svg") 
+          p(id="price")              
+        hr.m-4 
+
+        div.flex.items-center(dir="rtl")
+          img.h-4.w-4.mx-4(src="/img/clock.svg") 
+          p(id="timearrival")              
+        hr.m-4    
+
+        div.flex.items-center(dir="rtl")
+          img.h-4.w-4.mx-4(src="/img/bed.svg") 
+          p(id="bed")              
+        hr.m-4       
+
+        div.flex.items-center(dir="rtl")
+          img.h-4.w-4.mx-4(src="/img/fire.svg") 
+          p(id="accessories")              
+        hr.m-4  
+
+        div.flex.items-center(dir="rtl")
+          img.h-4.w-4.mx-4(src="/img/kitchen-set.svg") 
+          p(id="kitchen")              
+        hr.m-4              
+          
+        div.flex.items-center(dir="rtl")
+          img.h-4.w-4.mx-4(src="/img/tree.svg") 
+          p(id="outdoor")              
+        hr.m-4   
+
+      div.p-6.border-2.border-blue-200.m-4.shadow-xl.rounded-xl(class="lg:w-4/5 lg:ml-10")
         div.zimmer
           - 
             var sources = [
@@ -103,9 +81,10 @@ html(lang="he")
               "/img/slides/9.jpg"
             ]
           each s in sources
-            img.shadow-sm.rounded-xl(src=s style="height: 400px")                            
+            img.shadow-sm.rounded-xl(src=s class="w-1/2")                            
 
-    div.text-center.py-8(id="calendar" class="w-5/6 lg:w-64" style="margin: auto")  
+    //div.text-center.py-8(id="calendar" class="w-5/6 lg:w-64" style="margin: auto")  
+    p.text-xl.text-center הזמנות דרך ווצאפ או בטלפון: 052-373-1388
 
     div
       div.p-6.text-blue-800.border-2.border-blue-200.m-4.shadow-xl.rounded-xl 
