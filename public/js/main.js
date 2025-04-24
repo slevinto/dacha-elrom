@@ -30,13 +30,18 @@ $(document).ready(function() {
       if ($("#title1")[0] != null)
         $("#title1")[0].innerText = zimmerDetails.title1;
       $('#title2').append('<p style="margin-right: 5px;margin-left: 5px;">' + zimmerDetails.title2 + '</p>');          
+      
+      var appendString = '<div class="mx-auto flex items-center justify-center w-full"><div class="mx-auto text-center justify-center w-96">';        
       zimmerDetails.title3.forEach((element) =>
       {
-        $('#title3').append('<p style="margin-top: 15px"><strong>' + element + '</strong></p>');          
-      });        
+        appendString = appendString + '<p style="margin-top: 15px; text-align: right; font-family: Assistant; color: grey;" ><span style="color: black">• ' + 
+        element.split('-')[0] + 
+        '-' + '</span>'  + 
+        element.split('-')[1] + '</p>'
+      });
+      appendString = appendString + '</div></div>';
+      $('#title3').append(appendString);               
   });
-  
-
 })
 
 function getProperty() {

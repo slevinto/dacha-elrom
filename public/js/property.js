@@ -55,13 +55,13 @@ $(document).ready(function() {
         
         $("#occupancy").append('<div class="flex items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">' + 
           zimmerDetails.occupancy.title + 
-          '</p><p style="margin-right: 10px;">' 
+          '</p><p style="margin-right: 10px; color: gray;">' 
           + zimmerDetails.occupancy.description  + '</p></div>'); 
 
         var appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">מחירים:</p>';
         zimmerDetails.prices.forEach((element) =>
         {
-          appendString = appendString + '<p style="font-size: 16px;">' + element.category + " - " + element.price + '</p>';          
+          appendString = appendString + '<p style="font-size: 16px; color: gray;">' + element.category + " - " + element.price + '</p>';          
         });
         appendString = appendString + '</div>';
         $("#price").append(appendString);
@@ -69,7 +69,7 @@ $(document).ready(function() {
         appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">זמני אירוח:</p>';
         zimmerDetails.timearrival.forEach((element) =>
         {
-          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';          
+          appendString = appendString + '<p style="font-size: 16px; color: gray;">' + element + '</p>';          
         });
         appendString = appendString + '</div>';
         $("#timearrival").append(appendString);
@@ -77,7 +77,7 @@ $(document).ready(function() {
         appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">מקומות שינה בכל יחידה:</p>';
         zimmerDetails.bed.forEach((element) =>
         {
-          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';          
+          appendString = appendString + '<p style="font-size: 16px; color: gray;">' + element + '</p>';          
         });  
         appendString = appendString + '</div>';
         $("#bed").append(appendString);
@@ -85,7 +85,7 @@ $(document).ready(function() {
         appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; "> אבזור ונוחות:</p>';
         zimmerDetails.accessories.forEach((element) =>
         {
-            appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';        
+            appendString = appendString + '<p style="font-size: 16px; color: gray;">' + element + '</p>';        
         });
         appendString = appendString + '</div>';
         $("#accessories").append(appendString);
@@ -93,7 +93,7 @@ $(document).ready(function() {
         appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; "> מטבחון מאובזר בכל יחידה:</p>';
         zimmerDetails.kitchen.forEach((element) =>
         {
-          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';           
+          appendString = appendString + '<p style="font-size: 16px; color: gray;">' + element + '</p>';           
         });
         appendString = appendString + '</div>';
         $("#kitchen").append(appendString);
@@ -101,7 +101,7 @@ $(document).ready(function() {
         appendString = '<div class="items-center justify-end" style="white-space: nowrap"><p style="font-size: 20px; ">פינת ישיבה חיצונית:</p>';
         zimmerDetails.outdoor.forEach((element) =>
         {
-          appendString = appendString + '<p style="font-size: 16px;">' + element + '</p>';        
+          appendString = appendString + '<p style="font-size: 16px; color: gray;">' + element + '</p>';        
         });
         appendString = appendString + '</div>';
         $("#outdoor").append(appendString);
