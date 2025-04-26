@@ -31,9 +31,7 @@ html(lang="he")
       div.shadow-xl.rounded-xl.m-4(class="lg:w-1/4")
         div(id="sale").font-bold.text-red-600.shadow.my-4.border-red.text-center
         img.px-4.w-full(src="/img/border_flowers.png" style="transform: rotateX(180deg);")
-        img.px-4.w-full(src="/img/border_line.png")
         p.text-blue-600.text-xl.font-bold.my-1.text-center(id="title" dir="rtl" style="font-family: 'Stam'")
-        img.px-4.w-full(src="/img/border_line.png")
         img.px-4.w-full(src="/img/border_flowers.png")
         div.flex.items-center.my-4(dir="rtl")
           img.h-4.w-4.mx-4(src="/img/person-dress.svg") 
@@ -72,9 +70,8 @@ html(lang="he")
 
       div.p-6(class="lg:w-4/5 lg:ml-10")
         img.w-full(src="/img/border_flowers.png" style="transform: rotateX(180deg);")
-        img.w-full(src="/img/border_line.png")
-        
-        div.zimmer
+                
+        div.zimmer.pt-2
           - 
             var sources = [
               "/img/slides/1.jpg", 
@@ -89,8 +86,7 @@ html(lang="he")
             ]
           each s in sources
             img.shadow-sm.rounded-xl(src=s class="w-1/2")                            
-        img.w-full.pt-2(src="/img/border_line.png")
-        img.w-full(src="/img/border_flowers.png")
+        img.pt-2.w-full(src="/img/border_flowers.png")
         
     //div.text-center.py-8(id="calendar" class="w-5/6 lg:w-64" style="margin: auto")  
     p.text-xl.text-center הזמנות דרך ווטסאפ או בטלפון: 052-373-1388
